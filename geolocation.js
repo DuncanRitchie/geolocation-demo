@@ -44,25 +44,25 @@ const showPosition = (position) => {
   cnDiffLat = position.coords.latitude - codenationCoords.latitude;
   cnDiffLong =  position.coords.longitude - codenationCoords.longitude;
 
-  demo.innerHTML += `<br />You're ${cnDiffLat} degrees north of Code Nation and ${cnDiffLong} degrees east of Code Nation.`
+  demo.innerHTML += `<br />You&rsquo;re ${Math.abs(cnDiffLat)} degrees ${cnDiffLat>0 ? "north" : "south"} of Code Nation and ${Math.abs(cnDiffLong)} degrees ${cnDiffLong>0 ? "east" : "west"} of Code Nation.`
 
   if (Math.abs(cnDiffLat) < 0.001 && Math.abs(cnDiffLong) < 0.001) {
-      demo.innerHTML += `<br />You're at Code Nation!`
+      demo.innerHTML += `<br />You&rsquo;re at Code Nation!`
   }
   else {
-      demo.innerHTML += `<br />You're not at Code Nation!`
+      demo.innerHTML += `<br />You&rsquo;re not at Code Nation!`
   }
 
   mpDiffLat = position.coords.latitude - moneypennyCoords.latitude;
   mpDiffLong =  position.coords.longitude - moneypennyCoords.longitude;
 
-  demo.innerHTML += `<br />You're ${mpDiffLat} degres north of Moneypenny and ${mpDiffLong} degrees east of Moneypenny.`
+  demo.innerHTML += `<br />You&rsquo;re ${mpDiffLat} degrees north of Moneypenny and ${mpDiffLong} degrees east of Moneypenny.`
 
   if (Math.abs(mpDiffLat) < 0.001 && Math.abs(mpDiffLong) < 0.001) {
-      demo.innerHTML += `<br />You're at Moneypenny!`
+      demo.innerHTML += `<br />You&rsquo;re at Moneypenny!`
   }
   else {
-      demo.innerHTML += `<br />You're not at Moneypenny!`
+      demo.innerHTML += `<br />You&rsquo;re not at Moneypenny!`
   }
 }
 
