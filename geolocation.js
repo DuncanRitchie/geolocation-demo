@@ -46,7 +46,7 @@ const showPosition = (position) => {
 
   demo.innerHTML += `<br />You&rsquo;re ${Math.abs(cnDiffLat)} degrees ${cnDiffLat>0 ? "north" : "south"} of Code Nation and ${Math.abs(cnDiffLong)} degrees ${cnDiffLong>0 ? "east" : "west"} of Code Nation.`
 
-  if (Math.abs(cnDiffLat) < 0.001 && Math.abs(cnDiffLong) < 0.001) {
+  if (Math.abs(cnDiffLat) < 0.0008 && Math.abs(cnDiffLong) < 0.0008) {
       demo.innerHTML += `<br />You&rsquo;re at Code Nation!`
   }
   else {
@@ -58,7 +58,7 @@ const showPosition = (position) => {
 
   demo.innerHTML += `<br />You&rsquo;re ${Math.abs(mpDiffLat)} degrees ${mpDiffLat>0 ? "north" : "south"} of Moneypenny and ${Math.abs(mpDiffLong)} degrees ${mpDiffLong>0 ? "east" : "west"} of Moneypenny.`
 
-  if (Math.abs(mpDiffLat) < 0.001 && Math.abs(mpDiffLong) < 0.001) {
+  if (Math.abs(mpDiffLat) < 0.008 && Math.abs(mpDiffLong) < 0.0008) {
       demo.innerHTML += `<br />You&rsquo;re at Moneypenny!`
   }
   else {
@@ -66,4 +66,4 @@ const showPosition = (position) => {
   }
 }
 
-setInterval(getLocation,10000)
+setInterval(getLocation,1000)
