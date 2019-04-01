@@ -66,4 +66,4 @@ const showPosition = (position) => {
   }
 }
 
-setInterval(getLocation,60000)
+setInterval(getLocation,10000)
