@@ -1,5 +1,6 @@
 let demo = document.getElementById("demo");
 
+// Here are the coords for the Moneypenny and Code Nation offices.
 const moneypennyCoords = {
     latitude: 53.047,
     longitude: -3.019
@@ -10,6 +11,7 @@ const codenationCoords = {
     longitude: -2.880
 }
 
+//This tests whether geolocation services are valid and returns an error if not.
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, function showError(error) {
@@ -33,8 +35,10 @@ function getLocation() {
   }
 }
 
-function showPosition(position) {
-  demo.innerHTML = "Latitude: " + position.coords.latitude + 
+//If geolocation works, 
+const showPosition = (position) => {
+  date = new Date();
+  demo.innerHTML = date+"<br />Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude; 
 
   cnDiffLat = position.coords.latitude - codenationCoords.latitude;
@@ -61,3 +65,5 @@ function showPosition(position) {
       demo.innerHTML += `<br />You're not at Moneypenny!`
   }
 }
+
+setInterval(getLocation,60000)
