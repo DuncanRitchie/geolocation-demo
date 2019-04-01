@@ -56,7 +56,7 @@ const showPosition = (position) => {
   mpDiffLat = position.coords.latitude - moneypennyCoords.latitude;
   mpDiffLong =  position.coords.longitude - moneypennyCoords.longitude;
 
-  demo.innerHTML += `<br />You&rsquo;re ${mpDiffLat} degrees north of Moneypenny and ${mpDiffLong} degrees east of Moneypenny.`
+  demo.innerHTML += `<br />You&rsquo;re ${Math.abs(mpDiffLat)} degrees ${mpDiffLat>0 ? "north" : "south"} of Moneypenny and ${Math.abs(mpDiffLong)} degrees ${mpDiffLong>0 ? "east" : "west"} of Moneypenny.`
 
   if (Math.abs(mpDiffLat) < 0.001 && Math.abs(mpDiffLong) < 0.001) {
       demo.innerHTML += `<br />You&rsquo;re at Moneypenny!`
